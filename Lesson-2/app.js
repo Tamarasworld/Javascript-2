@@ -6,13 +6,12 @@ document.querySelector("#submitAreaButton").onclick = submitAreaFunction;
 
 function submitFunction() {
   let userRadius = convertToNumber(document.getElementById("radius").value);
-  let outputElement = document.getElementById("output").;
+  let outputElement = document.getElementById("output");
   if (userRadius) {
-    let circumference = calculateCircumference(userRadius)
-    outputElement = `The circumference is ${circumference}`;
+    let circumference = calculateCircumference(userRadius);
+    outputElement.innerHTML = `The circumference is ${circumference}`;
   } else {
-    outputElement.getElementById("output").inn =
-      "PLease enter a valid number.";
+    outputElement.innerHTML = "PLease enter a valid number.";
   }
 }
 
@@ -20,8 +19,11 @@ function submitAreaFunction() {
   let userRadius = convertToNumber(
     document.getElementById("radiusForArea").value
   );
+  let outputElement = document.getElementById("outputArea");
   if (userRadius) {
     let area = calculateArea(userRadius);
-    document.getElementById("output").innerHTML = `The area is ${area}!`;
+    outputElement.innerHTML = `The area is ${area}!`;
+  } else {
+    outputElement.innerHTML = "Please enter a valid number.";
   }
 }
